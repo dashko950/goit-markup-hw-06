@@ -63,11 +63,11 @@ img {
   height: auto;
 }
 
-.container {
+/* .container {
   width: 1158px;
   margin: 0 auto;
   padding: 0 15px;
-}
+} */
 
 .section {
   padding: 120px 0;
@@ -397,7 +397,7 @@ img {
 
 .footer-container {
   display: flex;
-  align-items: baseline;
+  align-items: center;
 }
 
 .footer-info {
@@ -753,6 +753,9 @@ a:focus {
 }
 
 .checkbox-label {
+  display: flex;
+  align-items: center;
+
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
@@ -787,6 +790,7 @@ a:focus {
   margin-left: 4px;
   text-decoration: underline;
   text-decoration-skip-ink: none;
+  vertical-align: baseline;
 }
 
 /* Кнопка отправки */
@@ -955,12 +959,8 @@ a:focus {
 
 .footer-text {
   text-align: left;
-  max-width: 268px;
+  max-width: 264px;
   margin: 0 auto;
-}
-
-.footer-social-list {
-  justify-content: center;
 }
 
 .subscribe-form {
@@ -971,8 +971,8 @@ a:focus {
 }
 
 .subscribe-input {
-  width: 100%;
-  max-width: 398px;
+  width: 288px;
+  max-width: 288px;
 }
 
 /* Mobile Menu Styles */
@@ -1024,6 +1024,10 @@ a:focus {
   margin-bottom: auto;
 }
 
+.mobile-menu-link.mobile-menu-active {
+  color: var(--primary-brand);
+}
+
 .mobile-menu-link {
   display: block;
   font-weight: 700;
@@ -1042,8 +1046,8 @@ a:focus {
 
 .mobile-contacts-phone {
   display: block;
-  font-weight: 700;
-  font-size: 36px;
+  font-weight: 500;
+  font-size: 20px;
   line-height: 1.11;
   letter-spacing: 0.02em;
   color: var(--primary-brand);
@@ -1060,18 +1064,33 @@ a:focus {
   margin-bottom: 48px;
 }
 
+/* Исправленные стили для социальных иконок */
 .mobile-social-list {
   display: flex;
-  gap: 56px;
-  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 48px;
 }
 
 .mobile-social-link {
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 1.22;
-  letter-spacing: 0.02em;
-  color: var(--primary-brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-brand);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-social-link:hover,
+.mobile-social-link:focus {
+  background-color: var(--pressed-state);
+}
+
+.mobile-social-icon {
+  fill: var(--light);
+  width: 24px;
+  height: 24px;
 }
 
 /* Modal Mobile */
@@ -1081,10 +1100,42 @@ a:focus {
   padding: 72px 16px 24px 16px;
 }
 
+/* ===== MEDIA QUERIES FOR MOBILE ===== */
+@media screen and (max-width: 767px) {
+  /* Адаптивный чекбокс для мобильных */
+  .checkbox-label {
+    white-space: normal;
+    flex-wrap: wrap;
+  }
+
+  .features.section {
+    padding: 96px 0;
+  }
+
+  .privacy-link {
+    display: block;
+    margin-left: 0;
+    margin-top: 4px;
+  }
+
+  /* Другие мобильные стили при необходимости */
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .mobile-menu-link {
+    font-size: 28px;
+  }
+}
+
 /* ===== TABLET STYLES (768px+) ===== */
 @media screen and (min-width: 768px) {
   .container {
     max-width: 768px;
+  }
+  .team .container {
+    width: 584px;
+    max-width: 584px;
   }
 
   /* Header Tablet */
@@ -1131,90 +1182,93 @@ a:focus {
       ),
       url("../images/hero-bg-tablet.jpg");
   }
+}
+.hero-title {
+  font-size: 56px;
+  line-height: 1.07;
+  max-width: 496px;
+  margin: 0 auto 36px;
+}
 
-  .hero-title {
-    font-size: 56px;
-    line-height: 1.07;
-    max-width: 496px;
-    margin: 0 auto 36px;
-  }
+/* Features Tablet */
+.features-list {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 72px 24px;
+}
+.features.section {
+  padding: 96px 0;
+}
 
-  /* Features Tablet */
-  .features-list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 72px 24px;
-  }
+.features-item {
+  flex-basis: calc((100% - 24px) / 2);
+}
 
-  .features-item {
-    flex-basis: calc((100% - 24px) / 2);
-  }
+.features-title {
+  text-align: left;
+  font-size: 36px;
+  line-height: 1.11;
+}
 
-  .features-title {
-    text-align: left;
-    font-size: 36px;
-    line-height: 1.11;
-  }
+/* Team Tablet */
+.team-list {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 64px 24px;
+}
 
-  /* Team Tablet */
-  .team-list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 64px 24px;
-  }
+.team-item {
+  flex-basis: calc((100% - 24px) / 2);
+  max-width: none;
+}
 
-  .team-item {
-    flex-basis: calc((100% - 24px) / 2);
-    max-width: none;
-  }
+/* Portfolio Tablet */
+.portfolio-list {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 72px 24px;
+}
 
-  /* Portfolio Tablet */
-  .portfolio-list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 72px 24px;
-  }
+.portfolio-item {
+  flex-basis: calc((100% - 24px) / 2);
+}
 
-  .portfolio-item {
-    flex-basis: calc((100% - 24px) / 2);
-  }
+/* Footer Tablet */
+.footer-container {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 72px 24px;
+  text-align: left;
+  padding: 0 108px;
+  align-items: flex-start;
+}
 
-  /* Footer Tablet */
-  .footer-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 72px 24px;
-    text-align: left;
-    padding: 0 108px;
-  }
+.footer-info {
+  flex-basis: calc(50% - 24px);
+  margin-right: 0;
+}
 
-  .footer-info {
-    flex-basis: calc(50% - 24px);
-    margin-right: 0;
-  }
+.footer-social {
+  flex-basis: calc(50% - 24px);
+}
 
-  .footer-social {
-    flex-basis: calc(50% - 24px);
-  }
+.footer-subscribe {
+  flex-basis: 100%;
+}
 
-  .footer-subscribe {
-    flex-basis: 100%;
-  }
+.subscribe-form {
+  flex-direction: row;
+  gap: 24px;
+}
 
-  .subscribe-form {
-    flex-direction: row;
-    gap: 24px;
-  }
+.subscribe-input {
+  width: 264px;
+}
 
-  .subscribe-input {
-    width: 264px;
-  }
-
-  /* Modal Tablet */
-  .modal-window {
-    width: 408px;
-    padding: 72px 24px 24px 24px;
-  }
+/* Modal Tablet */
+.modal-window {
+  width: 408px;
+  padding: 72px 24px 24px 24px;
 }
 
 /* ===== DESKTOP STYLES (1158px+) ===== */
