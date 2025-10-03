@@ -272,20 +272,20 @@ img {
   background-color: var(--light);
 }
 
-.team-list {
+/* .team-list {
   display: flex;
   gap: 24px;
   flex-wrap: wrap;
-}
+} */
 
-.team-item {
+/* .team-item {
   background-color: var(--white);
   border-radius: 0 0 4px 4px;
   box-shadow: 0 1px 6px rgba(46, 47, 66, 0.08), 0 1px 1px rgba(46, 47, 66, 0.16),
     0 2px 1px rgba(46, 47, 66, 0.08);
   flex-basis: calc((100% - 72px) / 4);
   overflow: hidden;
-}
+} */
 
 .team-img {
   width: 100%;
@@ -666,15 +666,15 @@ a:focus {
 .form-group,
 .form-group-fourth,
 .checkbox-wrapper.form-group-fifth {
-  margin-bottom: 8px !important;
+  margin-bottom: 8px;
 }
 
 .form-group-fourth {
-  margin-bottom: 16px !important;
+  margin-bottom: 16px;
 }
 
 .checkbox-wrapper.form-group-fifth {
-  margin-bottom: 24px !important;
+  margin-bottom: 24px;
 }
 
 /* Лейбл поля */
@@ -721,7 +721,7 @@ a:focus {
 
 /* Изменение цвета иконки при фокусе на input */
 .input-container:focus-within .input-icon {
-  fill: var(--primary-brand) !important; /* #4d5ae5 */
+  fill: var(--primary-brand); /* #4d5ae5 */
 }
 
 /* Текстовая область */
@@ -1276,7 +1276,6 @@ a:focus {
   .container {
     max-width: 1158px;
     padding: 0 15px;
-    width: 1440px;
   }
 
   /* Header Desktop */
@@ -1339,6 +1338,18 @@ a:focus {
   .team-list,
   .portfolio-list {
     gap: 24px;
+  }
+  .team-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 24px;
+    justify-content: center;
+  }
+  .team-item {
+    flex: 0 1 calc(25% - 24px); /* Более гибкий подход */
+    min-width: 250px; /* Минимальная ширина перед переносом */
+    max-width: 100%;
   }
 
   .team-item,
