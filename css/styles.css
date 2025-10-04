@@ -1141,7 +1141,7 @@ a:focus {
 }
 
 /* ===== TABLET STYLES (768px+) ===== */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1157px) {
   .container {
     max-width: 768px;
   }
@@ -1303,7 +1303,13 @@ a:focus {
     flex-direction: row;
     gap: 40px;
   }
-
+  .header-container {
+    padding: 0 15px;
+  }
+  .nav-list,
+  .address {
+    display: flex !important; /* перевизначити мобільні стилі */
+  }
   .address-link {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
@@ -1318,98 +1324,123 @@ a:focus {
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     padding: 24px 0;
   }
-}
 
-/* Hero Desktop */
-.hero {
-  padding: 188px 0;
-  background-image: linear-gradient(
-      rgba(46, 47, 66, 0.7),
-      rgba(46, 47, 66, 0.7)
-    ),
-    url("../images/hero-bg.jpg");
-}
+  /* Hero Desktop */
+  .hero {
+    padding: 188px 0;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url("../images/hero-bg.jpg");
+  }
 
-.hero-title {
-  margin: 0 auto 48px;
-}
+  .hero-title {
+    margin: 0 auto 48px;
+  }
 
-/* Features Desktop */
-.features-list {
-  gap: 24px;
-}
+  /* Features Desktop */
+  .features-list {
+    gap: 24px;
+    flex-direction: row; /* додати */
+    flex-wrap: nowrap;
+  }
 
-.features-item {
-  flex-basis: calc((100% - 72px) / 4);
-}
+  .features-item {
+    flex-basis: calc((100% - 72px) / 4);
+  }
 
-.features-icon {
-  display: flex;
-}
+  .features-icon {
+    display: flex;
+  }
 
-.features-title {
-  font-size: 20px;
-  line-height: 1.2;
-  font-weight: 500;
-}
+  .features-title {
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 500;
+  }
 
-.features-text {
-  font-weight: 400;
-}
+  .features-text {
+    font-weight: 400;
+  }
 
-/* Sections Padding Desktop */
-.section {
-  padding: 120px 0;
-}
-.team.container {
-  width: 1158px;
-  max-width: 1158px;
-}
-.team-list,
-.portfolio-list {
-  gap: 24px;
-}
-.team-list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 24px;
-  justify-content: center;
-}
-.team-item {
-  flex: 0 1 calc(25% - 24px); /* Более гибкий подход */
-  min-width: 250px; /* Минимальная ширина перед переносом */
-  max-width: 100%;
-}
+  /* Sections Padding Desktop */
+  .section {
+    padding: 120px 0;
+  }
+  .team.container {
+    width: 1158px;
+    max-width: 1158px;
+  }
 
-.team-item,
-.portfolio-item {
-  flex-basis: calc((100% - 72px) / 4);
-}
+  .team-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 24px;
+    justify-content: center;
+  }
+  .team-item {
+    flex: 0 1 calc(25% - 24px); /* Более гибкий подход */
+    min-width: 250px; /* Минимальная ширина перед переносом */
+    max-width: 100%;
+  }
 
-.portfolio-item {
-  flex-basis: calc((100% - 48px) / 3);
-}
+  .team-item,
+  .portfolio-item {
+    flex-basis: calc((100% - 48px) / 3); /* 3 колонки */
+    width: calc((100% - 48px) / 3); /* обов'язково */
+    max-width: 360px; /* обмежити максимальну ширину */
+  }
+  .portfolio-img {
+    width: 100%;
+    height: auto;
+  }
+  .portfolio-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    row-gap: 48px;
+    flex-direction: row;
+  }
 
-/* Footer Desktop */
-.footer-container {
-  flex-wrap: nowrap;
-  gap: 0;
-  padding: 0 15px;
-}
+  /* Footer Desktop */
+  .footer-container {
+    flex-wrap: nowrap;
+    gap: 0;
+    padding: 0 15px;
+    flex-direction: row;
+  }
 
-.footer-info {
-  flex-basis: auto;
-  margin-right: 120px;
-}
+  .footer-info {
+    flex-basis: auto;
+    margin-right: 120px;
+  }
 
-.footer-social {
-  flex-basis: auto;
-  margin-right: 80px;
-}
+  .footer-social {
+    flex-basis: auto;
+    margin-right: 80px;
+  }
 
-.footer-subscribe {
-  flex-basis: auto;
+  .footer-subscribe {
+    flex-basis: auto;
+  }
+  .menu-container {
+    display: none;
+  }
+  .subscribe-form {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+  }
+  .menu-toggle {
+    display: none !important;
+  }
+
+  .js-open-menu {
+    display: none;
+  }
 }
 
 /* ===== RETINA DISPLAYS ===== */
