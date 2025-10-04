@@ -500,7 +500,7 @@ a:focus {
 }
 
 .subscribe-input {
-  width: 264px;
+  /* width: 264px; */
   height: 40px;
   border: 1px solid var(--white);
   background-color: transparent;
@@ -897,7 +897,7 @@ a:focus {
 
 .features-title {
   font-weight: 700;
-  text-align: center;
+  text-align: left;
   font-size: 36px;
   line-height: 1.11;
 }
@@ -953,7 +953,6 @@ a:focus {
   display: flex;
   flex-direction: column;
   gap: 72px;
-  text-align: center;
 }
 
 .footer-info {
@@ -971,11 +970,6 @@ a:focus {
   flex-direction: column;
   gap: 16px;
   align-items: center;
-}
-
-.subscribe-input {
-  width: 288px;
-  max-width: 288px;
 }
 
 /* Mobile Menu Styles */
@@ -1118,6 +1112,10 @@ a:focus {
   .checkbox-label {
     white-space: normal;
     flex-wrap: wrap;
+  }
+  .subscribe-input {
+    width: 288px;
+    max-width: 288px;
   }
 
   .features.section {
@@ -1337,6 +1335,9 @@ a:focus {
 
   .hero-title {
     margin: 0 auto 48px;
+    font-size: 56px;
+    line-height: 1.07;
+    max-width: 496px;
   }
 
   /* Features Desktop */
